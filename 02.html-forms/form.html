@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" placeholder="username" id="username" required minlength="4" maxlength="12" />
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="email" id="email" required />
+        </div>
+
+        <input type="password" placeholder="password" id="password" required />
+        <br>
+        <input type="number" placeholder="age" id="age" required min="1" max="100" />
+
+        <br>
+        <input type="color" id="color" />
+        <br>
+        <input type="date" id="color" />
+        <input type="datetime-local" id="local-date" />
+        <input type="month" id="month" />
+        <input type="week" id="week" />
+        <input type="time" id="time" />
+
+
+        <input type="file" id="file" multiple accept="image/png" />
+        <input type="search" id="search" />
+        <input type="range" id="range" step="10" min="0" max="10" />
+
+        <hr>
+
+        <label for="men">Men</label>
+        <input type="radio" name="gender" id="men">
+        <label for="women">Women</label>
+        <input type="radio" name="gender" id="women">
+
+        <hr>
+
+        <label for="">slect your hobbies:</label>
+        <hr>
+        <label for="reading">Reading</label>
+        <input type="checkbox" name="hobbies" id="reading">
+
+        <label for="walking">Walking</label>
+        <input type="checkbox" name="hobbies" id="walking">
+
+        <label for="watchingMovie">Watching Movie</label>
+        <input type="checkbox" name="hobbies" id="watchingMovie">
+
+        <!-- <button type="submit">Submit</button>
+        <button type="reset">Reset</button> -->
+
+        <br>
+        <textarea name="message" id="message" placeholder="your message here.." rows="10" cols="50"></textarea>
+
+
+        <br>
+<!-- 
+        <select name="language" id="language">
+            <option value="en">EN</option>
+            <option value="az">AZ</option>
+            <option value="ru">RU</option>
+        </select>
+         -->
+
+         <!-- <label for="city">Select your city:</label> -->
+        <select name="city" id="city">
+            <option value="" hidden selected>Select your city</option>
+            <option value="baku">Baku</option>
+            <option value="sumgait">Sumgait</option>
+            <option value="ganja">Ganja</option>
+        </select>
+
+        <br>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </form>
+
+
+    <!-- html form elements: input, select, textarea, button, label, fieldset, legend -->
+
+
+    <hr>
+
+<form action="home.html">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+</body>
+
+</html>
