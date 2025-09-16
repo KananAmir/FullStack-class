@@ -1,0 +1,192 @@
+/* id, class, and element selectors */
+
+/* global selector */
+
+/* *{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+h2 {
+    color: blue;
+}
+
+/* id: # */
+/* class: . */
+
+#main-text {
+    color: green;
+}
+
+.text {
+    color: tomato;
+}
+
+.bg-teal {
+    background-color: teal;
+}
+
+span {
+    color: orange;
+}
+
+[target] {
+    background-color: yellow;
+}
+
+h4,
+h5,
+.text {
+    color: purple;
+}
+
+.container h2 {
+    color: brown;
+}
+
+.container p {
+    color: cyan;
+}
+
+/* .container > p{
+    color: cyan;
+} */
+
+/* strong + span{
+    color: red;
+} */
+strong ~ span {
+    color: red;
+}
+
+[type="text"] {
+    background-color: lightgray;
+}
+
+[required] {
+    border: 2px solid black;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transition: all 1s ease;
+}
+
+.box:hover {
+    background-color: red;
+    transform: scale(1.2);
+}
+
+.btn {
+    background-color: teal;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid teal;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.6s;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: teal;
+}
+
+.texts p {
+    color: red;
+}
+/* .texts p:first-child{
+    color: blue;
+}
+.texts p:last-child{
+    color: orange;
+} */
+
+/* .texts .text:nth-child(2){
+    color: rgb(42, 165, 81);
+} */
+
+/* .texts .text:nth-child(odd){
+    color: rgb(136, 23, 181);
+} */
+
+/* .texts .text:nth-child(even){
+    color: rgb(161, 42, 165);
+} */
+
+.texts .text:nth-child(2n + 1) {
+    color: rgb(161, 42, 165);
+}
+
+.selected-text {
+    background-color: lightgray;
+}
+.selected-text::first-letter {
+    font-size: 48px;
+}
+.selected-text::first-line {
+    color: blue;
+}
+
+/* #mainHeading::after{
+    content: " - main heading";
+    color: gray;
+    font-size: 24px;
+} */
+#mainHeading::after {
+    content: "😜";
+    color: gray;
+    font-size: 24px;
+}
+#mainHeading::before {
+    content: "😜";
+    color: gray;
+    font-size: 24px;
+}
+
+.main-heading {
+    color: orange !important;
+}
+
+h1 {
+    color: purple;
+}
+
+#mainHeading {
+    color: blue;
+}
+
+* {
+    color: magenta;
+}
+
+/* global css - 0
+element - 1,
+class - 10,
+id - 100,
+inline - 1000  */
+
+/* !important, inline css, id, class, element (tag), global css */
+
+.texts .text {
+    font-size: 24px;
+    background-color: lightseagreen;
+}
+
+
+.texts .text.font-36{
+    font-size: 36px;
+}
+
+.text-green{
+    color: green;
+}
+
+span.text-green.bg-red{
+    background-color: red;
+    color: blue;
+}
