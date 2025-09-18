@@ -1,0 +1,36 @@
+h1{
+    color: tomato;
+    /* background-color: teal; */
+    text-align: center;
+     /*text-decoration-line: underline;
+    text-decoration-color: orange;
+    text-decoration-thickness: 10px;
+    text-decoration-style: wavy; */
+    /* text-decoration: underline green 10px wavy; */
+    text-decoration: line-through;
+
+    /* text-transform: uppercase;
+    text-transform: lowercase;
+    text-transform: capitalize;
+    text-transform: none; */
+}
+
+p{
+    font-size: 24px;
+    text-align: justify;
+    text-align-last: justify;
+    text-indent: 50px;
+    /* letter-spacing: 10px; */
+    word-spacing: 10px;
+    line-height: 1.5;
+    /* white-space: nowrap; */
+    /* white-space: pre; */
+}
+
+ul{
+    list-style: none;
+}
+
+ul li a{
+    text-decoration: none;
+}

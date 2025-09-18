@@ -1,0 +1,70 @@
+.heading {
+    /* background-color: blueviolet; */
+    /* background-color: #c15b5b; */
+    background-color: rgb(194, 31, 31, 0.5);
+}
+
+.wrapper {
+    width: 400px;
+    padding: 1rem;
+    border: 2px solid;
+    background-color: rgb(255, 0, 0);
+    /* background-color: rgb(255, 0, 0, 0.2); */
+    /* opacity: 0.5; */
+}
+
+#banner {
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+    border: 2px solid;
+    background-image: url("https://i.pinimg.com/474x/0e/f5/49/0ef5497a58c2ba5900ffa8a4656ed0a8.jpg");
+    background-repeat: no-repeat;
+    /* background-position: center center; */
+    /* background-size: contain; */
+    background-size: cover;
+}
+#about {
+    background-image: url("../images/Image\ 2.jpg");
+}
+#team {
+    background-image: url("../images/Image\ 3.jpg");
+    /* background-attachment: fixed; */
+}
+#contact {
+    background-image: url("../images/Image\ 5.jpg");
+}
+
+section {
+    height: 100vh;
+    border: 2px solid;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#gradient {
+    box-sizing: border-box;
+    height: 100vh;
+    border: 2px solid;
+    background-color: #fff;
+    margin: 1rem auto;
+    /* background-image: linear-gradient(to right, red, orange, green); */
+    /* background-image: linear-gradient(to left, red, orange, green); */
+    /* background-image: linear-gradient(to right bottom, red, orange, green); */
+    /* background-image: radial-gradient(red, yellow, green); */
+    /* background-image: conic-gradient(red, yellow, green); */
+    /* background-image: repeating-conic-gradient(red 10%, yellow 20%); */
+    /* background: linear-gradient(
+        90deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgba(253, 29, 141, 0.43) 36%,
+        rgba(252, 176, 69, 1) 100%
+        ); */
+    background-image:
+        url("https://png.pngtree.com/png-clipart/20230512/original/pngtree-isolated-cat-on-white-background-png-image_9158356.png"),
+        linear-gradient(red, orange, green);
+        background-repeat: no-repeat;
+        background-position: center;
+}
