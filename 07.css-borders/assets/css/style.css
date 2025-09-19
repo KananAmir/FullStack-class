@@ -1,0 +1,41 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+h1{
+    /* border-style: solid;
+    border-color: red;
+    border-width: 5px; */
+
+    /* border-top-style: dotted;
+    border-right-style: double;
+    border-bottom-style: dashed;
+    border-left-style: solid; 
+    */
+
+    border-style: dotted double dashed solid;
+    border-width: 10px;
+    border-color: red green orange blue;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    /* border: 40px groove teal; */
+    border: 10px solid teal;
+    background-color: orange;
+    /* border-radius: 50%; */
+    border-top-left-radius: 50% ;
+    border-bottom-right-radius: 50% ;
+
+}
+
+.figur{
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+}

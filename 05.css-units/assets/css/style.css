@@ -1,0 +1,63 @@
+/* CSS units: px, %, vw, vh, em, rem */
+
+/* vw - viewport width */
+/* vh - viewport height */
+/* rem - root element */
+
+/* *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+/* html default size is 16px */
+
+#heading{
+    font-size: 1.5rem;
+}
+.wrapper{
+    background-color: red;
+    width: 600px;
+    height: 400px;
+}
+
+/* .wrapper .box{
+    background-color: teal;
+    width: 50%;
+    height: 50%;
+} */
+
+.wrapper .box{
+    background-color: teal;
+    width: 90vw;
+    height: 40vh;
+}
+
+/* 
+p{
+    font-size: 24px;
+}
+
+p span{
+    font-size: 200%;
+} */
+ 
+
+/* p{
+    font-size: 2rem;
+} */
+
+p span{
+    color: red;
+    font-size: 0.5em;
+}
+
+.card{
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+}
+
+.card img{
+    width: 100%;
+}
