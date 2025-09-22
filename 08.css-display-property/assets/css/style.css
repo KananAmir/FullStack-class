@@ -1,0 +1,29 @@
+/* display: inline, block, inline-block, flex, grid, none */
+
+/* opacity property */
+
+.box{
+    background-color: teal;
+    height: 100px;
+    width: 100px;
+    border: 2px solid orange;
+    display: inline-block;
+    font-size: 2rem;
+    color: orange;
+}
+.box-2{
+    /* display: none; */
+    opacity: 0;
+}
+
+h2{
+    background-color: orange;
+    width: 400px;
+    margin: 20px;
+}
+span{
+    background-color: blueviolet;
+    width: 400px;
+    display: inline-block;
+    margin: 20px;
+}

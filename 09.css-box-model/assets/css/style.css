@@ -1,0 +1,42 @@
+/* BOX MODEL */
+
+
+/* reset css */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+    border: 20px solid;
+    padding: 40px;
+    /* display: inline-block; */
+    /* margin: 50px; */
+    /* margin: 40px; */
+    /* box-sizing: content-box; */
+    /* box-sizing: border-box; */
+
+
+    /* margin-top: 20px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+    margin-left: 160px; */
+
+
+    /* top, right, bottom, left */
+    /* margin: 40px 40px 40px 40px; */
+    /* margin: 40px; */
+
+    /* margin: 20px 40px; */
+    /* margin: 20px 40px 80px 160px; */
+    /* margin: 0 auto; */
+    margin: 50px auto;
+}
+
+.box-2{
+    /* margin: 80px; */
+}
