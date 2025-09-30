@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 80%;
+    height: 65vh;
+    margin: 40px auto;
+    border: 2px solid black;
+    position: relative;
+}
+
+.box {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* animation-name: move; */
+    /* animation-name: rotate; */
+    /* animation-duration: 2s; */
+    /* animation-iteration-count: 2; */
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 0s; */
+    /* animation-timing-function: linear; */
+    /* animation-timing-function: cubic-bezier(.88,.25,.08,.94); */
+    /* animation-direction: alternate; */
+    /* animation-direction: alternate-reverse; */
+    /* animation-fill-mode: backwards; */
+    position: absolute;
+    animation: rotate360 4s linear infinite;
+}
+
+.heart-wrapper {
+    width: 500px;
+    height: 400px;
+    margin: 40px auto;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-wrapper .fa-heart {
+    font-size: 100px;
+    color: crimson;
+    animation: heartBeat2 1s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes heartBeat2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* @keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(300px);
+    }
+} */
+
+/* @keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+} */
+
+@keyframes rotate360 {
+    0% {
+        top: 0;
+        left: 0;
+        /* transform: rotate(0deg); */
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 100px);
+        transform: rotate(90deg);
+        background-color: lightblue;
+    }
+    50% {
+        top: calc(100% - 100px);
+        left: calc(100% - 100px);
+        transform: rotate(180deg);
+        background-color: lightgreen;
+    }
+    75% {
+        top: calc(100% - 100px);
+        left: 0;
+        transform: rotate(270deg);
+        background-color: violet;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: rotate(360deg);
+        background-color: coral;
+    }
+}

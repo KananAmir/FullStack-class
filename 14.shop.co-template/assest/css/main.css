@@ -155,6 +155,7 @@ footer .footer-top {
 .footer-top .social-icons i:hover {
     background-color: #000;
     color: #fff;
+    transform: translateY(-5px);
 }
 
 .footer-top div ul {
