@@ -152,3 +152,56 @@ console.log(add(1, 2)); // 3
 function test(){}
 
 console.log(test()); // undefined
+
+
+function salamlama(username){
+    console.log(`Hello, ${username}`);
+}
+
+salamlama("Ayan")
+
+function sumOfArrayElements(arr){
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        sum += arr[i]
+    }
+    return sum
+}
+
+console.log(sumOfArrayElements([1,2,3])); // 6
+console.log(sumOfArrayElements([1,2,3,4])); // 10
+console.log(sumOfArrayElements([1,2,3,4,5])); // 15
+
+
+// callback function
+
+
+// higher order function
+function mainFunction(cb){
+    cb()
+}
+
+
+// callback function
+function callbackFunction(){
+    console.log("I am callback function");
+}
+
+mainFunction(callbackFunction) // I am callback function
+
+mainFunction(function(){
+    console.log("I am callback function 2");
+})
+
+mainFunction(()=>{
+    console.log("I am callback function 3");
+})
+
+function processUserInput(callback){
+    let name = "Gunay"
+    callback(name)
+}
+
+processUserInput(function(name){
+    console.log(`Hello, ${name}`);
+})
