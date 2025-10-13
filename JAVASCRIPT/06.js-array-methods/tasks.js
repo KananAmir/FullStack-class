@@ -8,7 +8,6 @@ const products = [
 ];
 
 
-
 // # Bütün məhsul adlarını (name) console-a çıxar.
 // # Qiyməti 1000-dən böyük olan məhsulları tap və console-a çıxar.
 // # “Electronics” kateqoriyasına aid məhsulları filter et.
