@@ -181,7 +181,18 @@ function validateForm() {
 
 // Search functionality
 
-search.addEventListener("input", (event) => {
+// search.addEventListener("input", (event) => {
+//     const searchQuery = event.target.value.toLowerCase().trim();
+//     const filteredEmployees = employees.filter((employee) => {
+//         return employee.name.toLowerCase().includes(searchQuery) || employee.position.toLowerCase().includes(searchQuery);
+//     })
+
+//     // console.log(filteredEmployees);
+//     renderEmployeeTable(filteredEmployees);
+
+// })
+
+search.addEventListener("keyup", (event) => {
     const searchQuery = event.target.value.toLowerCase().trim();
     const filteredEmployees = employees.filter((employee) => {
         return employee.name.toLowerCase().includes(searchQuery) || employee.position.toLowerCase().includes(searchQuery);
