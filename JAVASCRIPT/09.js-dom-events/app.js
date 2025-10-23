@@ -58,3 +58,24 @@ input.addEventListener("blur", (e)=>{
     e.target.style.backgroundColor = "white";
     e.target.style.color = "black";
 })
+
+
+//scroll event
+
+// window.addEventListener("scroll", (e)=>{
+//     const header = document.querySelector("header");
+//     // console.log("scrolling...");
+//     // console.log(window.scrollY);
+
+//     if(window.scrollY > 0){
+//         header.classList.add("scroll")
+//     }else{
+//         header.classList.remove("scroll")
+//     }
+// })
+
+
+window.addEventListener("scroll", (e)=>{
+    const header = document.querySelector("header");
+    header.classList.toggle("scroll", window.scrollY > 0);
+})
