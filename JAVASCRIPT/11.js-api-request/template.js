@@ -1,4 +1,6 @@
-const BASE_URL = 'https://book-store-api-liard-three.vercel.app/';
+import { BASE_URL } from "./constant.js";
+
+// const BASE_URL = 'https://book-store-api-liard-three.vercel.app/';
 const search = document.getElementById("search")
 
 const fetchData = async (endpoint) => {
