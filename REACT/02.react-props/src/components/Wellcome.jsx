@@ -25,12 +25,15 @@
 // export default Wellcome
 
 const Wellcome = ({ user = 'Guest' }) => {
-
+  
+  
+  console.log(user);
+  user = 'Sevər'
+  
   return (
     <div>
       Hello, {user}!
     </div>
   )
 }
-
-export default Wellcome
+ export default Wellcome
