@@ -1,47 +1,135 @@
 import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import Swal from 'sweetalert2'
+import Search from "./Search";
+import { FaEdit } from "react-icons/fa";
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [author, setAuthor] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [editedBlogId, setEditedBlogId] = useState(null);
 
-    const handleAddBlog = (e) => {
+
+    console.log(editedBlogId, "editedBlogId");
+    
+
+    const filteredBlogs = blogs.filter((blog) => blog.title.toLowerCase().includes(searchQuery))
+
+    // console.log(filteredBlogs);
+
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         if (title.trim() === "" || content.trim() === "" || author.trim() === "") {
-            alert("Please fill in all fields.");
+            // alert("Please fill in all fields.");
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Please fill in all fields.",
+                showConfirmButton: false,
+                timer: 1500
+            });
             return;
         }
 
-        const newBlog = {
-            id: Date.now(),
-            title,
-            content,
-            author
-        }
-        console.log(newBlog);
+        if (!editedBlogId) {
+            const newBlog = {
+                id: Date.now(),
+                title,
+                content,
+                author
+            }
+            console.log(newBlog);
 
-        setBlogs([...blogs, newBlog]);
+            setBlogs([...blogs, newBlog]);
+
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Blog added successfully!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }else{
+            console.log(blogs, "blogs before update");
+
+            // const updatedBlogs = blogs.map((blog)=>{
+            //     if (blog.id === editedBlogId) {
+            //         return {
+            //             ...blog,
+            //             title: title,
+            //             content: content,
+            //             author: author
+            //         }
+            //     }
+            //     return blog;
+            // })
+
+            // console.log(updatedBlogs, "updatedBlogs");
+            // setBlogs(updatedBlogs);
+
+            const idx = blogs.findIndex((blog)=> blog.id === editedBlogId);
+            blogs[idx] = {
+                ...blogs[idx],
+                title: title,
+                content: content,
+                author: author
+            }
+            setBlogs([...blogs]);
+
+            
+            setEditedBlogId(null);
+
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Blog updated successfully!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
 
         // Clear the form fields after submission
         setTitle("");
         setContent("");
         setAuthor("");
 
+
+
     }
 
     const handleDelete = (id) => {
-        const updatedBlogs = blogs.filter((blog) => blog.id !== id);
-        setBlogs(updatedBlogs);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            console.log(result.isConfirmed);
+            if (result.isConfirmed) {
+                const updatedBlogs = blogs.filter((blog) => blog.id !== id);
+                setBlogs(updatedBlogs);
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success",
+                    timer: 1500,
+                });
+            }
+        });
     }
     return (
         <div className="min-h-screen mb-4 bg-gray-50 p-6">
-            <form className="bg-white shadow-md rounded-2xl p-8 w-full max-w-md border border-gray-100  mx-auto" onSubmit={handleAddBlog}>
+            <form className="bg-white shadow-md rounded-2xl p-8 w-full max-w-md border border-gray-100  mx-auto" onSubmit={handleSubmit}>
                 {/* Title */}
                 <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-                    Add New Blog
+                    {editedBlogId ? "Edit Blog" : "Add New Blog"}
                 </h2>
 
                 <div className="flex flex-col gap-4">
@@ -70,23 +158,25 @@ const Blogs = () => {
                         name="author"
                         id="author"
                         placeholder="Author Name"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                        className={`w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition`}
                         onChange={(e) => { setAuthor(e.target.value) }}
                         value={author}
                     />
 
                     <button
                         type="submit"
-                        className="mt-2 bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300"
+                        className={`w-full text-white py-2 px-4 rounded-lg ${!editedBlogId ? "bg-indigo-600 hover:bg-indigo-700" : "bg-green-600 hover:bg-green-500"} transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
                     >
-                        Add Blog
+                        {editedBlogId ? "Update Blog" : "Add Blog"}
                     </button>
                 </div>
             </form>
-
+            <div className="my-4">
+                <Search setSearchQuery={setSearchQuery} searchQuery={searchQuery} />
+            </div>
             <div className="mt-8 w-full max-w-3xl mx-auto">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Blogs</h2>
-                {blogs.length === 0 ? (
+                {filteredBlogs.length === 0 ? (
                     <p className="text-gray-600 text-center">No blogs available. Please add some blogs.</p>
                 ) : (
                     <table className="min-w-full border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
@@ -108,7 +198,7 @@ const Blogs = () => {
                         </thead>
 
                         <tbody className="divide-y divide-gray-200">
-                            {blogs.map((blog) => (
+                            {filteredBlogs.map((blog) => (
                                 <tr
                                     key={blog.id}
                                     className="hover:bg-indigo-50 transition-colors duration-200"
@@ -118,18 +208,27 @@ const Blogs = () => {
                                     <td className="px-6 py-3 text-gray-700">{blog.author}</td>
                                     <td className="px-6 py-3">
                                         <button className="text-red-600 hover:text-red-800 transition-colors duration-200 cursor-pointer"
-                                        onClick={()=>{ handleDelete(blog.id)}}
-                                        > 
+                                            onClick={() => { handleDelete(blog.id) }}
+                                        >
                                             <FaRegTrashAlt />
+                                        </button>
+                                        <button className="ml-4 text-green-600 hover:green-blue-800 transition-colors duration-200 cursor-pointer"
+                                            onClick={() => {
+                                                setEditedBlogId(blog.id)
+                                                setTitle(blog.title)
+                                                setContent(blog.content)
+                                                setAuthor(blog.author)
+                                            }}>
+                                            <FaEdit />
                                         </button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-
                 )}
             </div>
+
         </div >
     )
 }
